@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Hello world!</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+
+		<h1>Привет, мир</h1>
+		<h2>GET:</h2>
+		<ul>
+			{% for k, i in getsItems %}
+        		<li>{{ k }}
+        			<ul>
+        				{% for l in i %}
+            				<li>{{ l }}</li>
+        				{% endfor %}
+        			</ul>
+       			</li>
+    		{% endfor %}
+    	</ul>
+
+		<h2>POST:</h2>
+
+		<ul>
+			{% for k, i in putsItems %}
+        		<li>{{ k }}
+        			<ul>
+        				{% for l in i %}
+            				<li>{{ l }}</li>
+        				{% endfor %}
+        			</ul>
+       			</li>
+    		{% endfor %}
+    	</ul>
+
+    	<form method="post" action="?get1=val1+val2&get2=val3">
+    		{% csrf_token %}
+        	<h1>Submit the form:</h1>
+        	<p>
+            	Post1: <input type="text" name="post1">
+        	</p>
+        	<p>
+        	    <input name="post2" type="checkbox" value="value1"> Value1
+        	    <input name="post2" type="checkbox" value="value2"> Value2
+       		</p>
+        	<p>
+            	<input type="submit" value="Submit">
+        	</p>
+        </form>
+    </body>
+</html>

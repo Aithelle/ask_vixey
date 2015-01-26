@@ -1,0 +1,129 @@
+.my-overlay {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  z-index: 10;
+}
+
+.my-search {
+	margin-left: auto;
+	margin-right: auto;
+}
+.my-nav-ask-button {
+    margin-left: 15px;
+    padding: 6px 12px !important;
+    line-height: 1.42857 !important;
+    color: #FFF !important;
+}
+
+.my-nav-ask-button.active,.my-nav-ask-button.focus,
+.my-nav-ask-button:active,.my-nav-ask-button:focus,
+.my-nav-ask-button:hover,.open>.dropdown-toggle.my-nav-ask-button{
+  color:#fff !important;
+  background-color:#449d44!important;
+  border-color:#398439!important
+}
+
+.my-vote {
+	margin: 5px;
+}
+.my-centered {
+  text-align: center;
+}
+
+.my-vote * {
+	border: none;
+}
+
+.my-vote-result {
+	font-size: larger;
+	font-weight: bold;
+}
+
+.my-login-form {
+	margin-top: 30px;
+}
+
+.my-avatar-small {
+  max-height: 20px;
+  max-width: 20px;
+}
+
+.my-avatar {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.row {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.col-xs-9 h3 {
+  margin-top: 0px;
+}
+
+.highlight {
+  background: yellow;
+}
+
+
+/* Offcanvas */
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+footer {
+  padding: 30px 0;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+

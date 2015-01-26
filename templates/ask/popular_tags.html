@@ -1,0 +1,8 @@
+{% if tags %}
+<div>
+	<h3>Popular tags</h3>
+	{% for tag in tags %}
+		<a href="{% url 'tag' tag.id %}">{{ tag.text }}</a>{% if not forloop.last %}, {% endif %}
+	{% endfor %}
+</div>
+{% endif %}

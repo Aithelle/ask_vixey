@@ -1,0 +1,23 @@
+{% extends "ask/base.html" %}
+
+{% block title %}{{ tag.text }}{% endblock %}
+
+{% block content %}
+<h3>Questions tagged with <a href="{% url 'tag' tag.id %}">{{ tag.text }}</a>:</h3>
+
+{% if items_list %}
+  {% for question in items_list %}
+    {% include 'ask/single_question.html' %}
+  {% endfor %}
+
+{% block pagination %}
+      {% include 'ask/pagination.html' %}
+{% endblock %}
+
+  {% else %}
+    <div class="row panel alert alert-warning">
+      <p>This tag has no questions.</p>
+    </div>
+  {% endif %}
+
+{% endblock %}

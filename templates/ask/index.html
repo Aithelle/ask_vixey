@@ -1,0 +1,29 @@
+{% extends "ask/base.html" %}
+
+{% block title %}
+  {% if sort == 'rating' %}Best questions
+  {% else %}New questions{% endif %}
+{% endblock %}
+
+{% block content %}
+<ul class="nav nav-tabs">
+  <li role="presentation"{% if sort != 'rating' %} class="active"{% endif %}><a href="/"><h3>New questions</h3></a></li>
+  <li role="presentation"{% if sort == 'rating' %} class="active"{% endif %}><a href="/?sort=rating"><h3>Best questions</h3></a></li>
+</ul>
+
+{% if items_list %}
+  {% for question in items_list %}
+    {% include 'ask/single_question.html' %}
+  {% endfor %}
+
+{% block pagination %}
+      {% include 'ask/pagination.html' %}
+{% endblock %}
+
+  {% else %}
+    <div class="row panel alert alert-warning">
+      <p>No questions have been added yet.</p>
+    </div>
+  {% endif %}
+
+{% endblock content %}
